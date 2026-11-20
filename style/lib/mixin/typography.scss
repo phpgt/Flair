@@ -2,6 +2,11 @@
 @use "../object/link";
 
 @mixin typography {
+	::selection {
+		background-color: var(--theme-selection-background, var(--theme-color-primary));
+		color: var(--theme-selection-text, var(--theme-color-on-accent));
+	}
+
 	:where(h1, h2, h3, h4, h5, h6) {
 		@extend %d-typography-heading;
 		margin-block: var(--theme-space-6) var(--theme-space-3);

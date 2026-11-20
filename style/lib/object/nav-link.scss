@@ -13,6 +13,7 @@
 	overflow-wrap: anywhere;
 
 	&:hover, &:focus-visible {
+		color: var(--theme-nav-hover-text, var(--theme-nav-text, var(--theme-color-text)));
 		background: var(
 			--theme-nav-hover-background,
 			var(--theme-color-surface-disabled)

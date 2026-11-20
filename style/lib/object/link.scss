@@ -8,6 +8,7 @@
 	overflow-wrap: anywhere;
 
 	&:hover {
+		color: var(--theme-link-hover-color, var(--theme-link-color, var(--theme-color-accent)));
 		text-decoration-thickness: var(
 			--theme-link-hover-thickness,
 			var(--theme-link-thickness, 1px)

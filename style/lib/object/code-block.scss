@@ -1,7 +1,7 @@
 %o-code-block {
 	margin: 0;
 	padding: var(--theme-code-padding, var(--theme-space-6));
-	border: var(--theme-border-width) solid var(--theme-color-border);
+	border: var(--theme-border-width) solid var(--theme-code-outline, var(--theme-color-border));
 	border-radius: var(--theme-code-radius, var(--theme-radius));
 	background: var(--theme-code-background, var(--theme-color-surface-disabled));
 	color: var(--theme-code-text, var(--theme-color-text));

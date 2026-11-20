@@ -3,7 +3,8 @@
 	*, *::before, *::after {
 		box-sizing: border-box;
 	}
-	body {
+	// Keep the baseline weaker than opt-in layouts, regardless of emission order.
+	:where(body) {
 		margin: 0;
 	}
 	[hidden] {

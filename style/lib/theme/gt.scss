@@ -4,6 +4,11 @@
 	@include base.base;
 
 	--theme-color-primary: light-dark(#4f5b93, #aeb8ef);
+	--theme-selection-background: var(--theme-color-primary);
+	--theme-selection-text: light-dark(
+		color-mix(in srgb, var(--theme-color-primary) 20%, #f2f2f2),
+		var(--theme-color-page)
+	);
 	--theme-color-page: light-dark(#fff, #17191f);
 	--theme-color-surface: var(--theme-color-page);
 	--theme-color-text: light-dark(#344145, #e4e9eb);
@@ -26,6 +31,8 @@
 		color-mix(in srgb, var(--theme-sidebar-contrast-background), var(--theme-color-primary) 35%)
 	);
 	--theme-notice-background: light-dark(#bbf6b7, #183d25);
+	--theme-gallery-border: var(--theme-color-primary);
+	--theme-results-background: color-mix(in srgb, var(--theme-sidebar-contrast-background), var(--theme-color-page) 80%);
 	--theme-gallery-background: light-dark(#f3f4f8, #20242d);
 
 	--theme-color-surface-disabled: var(--theme-sidebar-contrast-background);
@@ -35,6 +42,15 @@
 	--theme-color-on-accent: var(--theme-color-page);
 	--theme-color-success: light-dark(#26722d, #8fe298);
 	--theme-color-danger: light-dark(#a52222, #ff9999);
+	--theme-root-font-size: 18px;
+	--theme-font-brand: "Ubuntu Condensed", sans-serif;
+	--theme-brand-filter: none;
+	--theme-heading-1: 2em;
+	--theme-heading-2: 1.5em;
+	--theme-heading-3: 1.17em;
+	--theme-heading-4: 1em;
+	--theme-label-weight: 400;
+	--theme-button-weight: 400;
 	--theme-font-body: "Ubuntu", sans-serif;
 	--theme-font-heading: "Ubuntu", sans-serif;
 	--theme-font-mono: "Ubuntu Mono", monospace;
@@ -43,15 +59,21 @@
 	--theme-heading-weight: 700;
 	--theme-text-leading: normal;
 	--theme-heading-leading: normal;
-	--theme-link-thickness: 2px;
+	--theme-link-thickness: auto;
+	--theme-link-offset: auto;
+	--theme-feature-marker-hue-step: 60deg;
+	--theme-feature-marker-saturation: 2;
+	--theme-intro-border-colours: #f45b69, #ffd166, #06d6a0, #118ab2, #7b2cbf, #f45b69;
+	--theme-intro-border-duration: 3s;
 	--theme-radius: 1rem;
 	--theme-focus-color: var(--theme-color-primary);
 	--theme-focus-width: 0.25rem;
 	--theme-focus-offset: 0;
-	--theme-control-background: var(--theme-button-background);
-	--theme-control-background-focus: var(--theme-button-background);
-	--theme-control-border: transparent;
+	--theme-control-background: var(--theme-color-page);
+	--theme-control-background-focus: var(--theme-color-page);
+	--theme-control-border: var(--theme-color-muted);
 	--theme-control-border-hover: var(--theme-color-primary);
+	--theme-control-placeholder-opacity: 1;
 	--theme-control-font: var(--theme-font-body);
 	--theme-control-min-height: 0px;
 	--theme-code-background: var(--theme-sidebar-contrast-background);
@@ -67,6 +89,7 @@
 
 	--theme-nav-gap: 0px;
 	--theme-nav-radius: 0px;
+	--theme-nav-hover-text: var(--theme-color-primary);
 	--theme-nav-text: var(--theme-color-text);
 	--theme-nav-hover-background: transparent;
 	--theme-nav-current-background: transparent;

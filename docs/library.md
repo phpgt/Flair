@@ -854,7 +854,7 @@ foundational value or a literal.
 Add Flair as a dependency and put its `style/lib` directory on the Sass load path:
 
 ```json
-{ "dependencies": { "flair": "github:BrightFlair/flair" } }
+{ "dependencies": { "flair": "github:phpgt/Flair" } }
 ```
 
 A local checkout works the same way with `"flair": "file:../../BrightFlair/flair"`,

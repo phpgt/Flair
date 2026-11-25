@@ -1,7 +1,7 @@
 @use "../variable/icon" as variable;
 @use "../pattern/icon" as pattern;
 
-// Bind `data-icon` and `data-icon-end` to the icon pattern, and turn each
+// Bind `data-icon`, `data-icon-end`, and disclosure state icons to the icon pattern, and turn each
 // registered name into a file URL. A URL cannot be built from an attribute
 // value in CSS, so the set in use is named once, in Sass:
 //
@@ -18,7 +18,30 @@
 	#{$prefix}[data-icon-end], #{$prefix}[data-icon][data-icon-right] {
 		@extend %p-icon-end;
 	}
+	// State icons belong to the summary, so native details behaviour (including
+	// keyboard interaction and exclusive groups) needs no script. Without these
+	// opt-in attributes, summaries retain their browser marker.
+	#{$prefix}summary[data-icon-closed], #{$prefix}summary[data-icon-open] {
+		@extend %p-icon;
+		display: flex;
+		align-items: center;
+		list-style: none;
+		--theme-icon: var(--theme-icon-closed, linear-gradient(#0000, #0000));
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+	#{$prefix}details[open] > summary[data-icon-closed], #{$prefix}details[open] > summary[data-icon-open] {
+		--theme-icon: var(--theme-icon-open, var(--theme-icon-closed, linear-gradient(#0000, #0000)));
+	}
 	@each $name in $names {
+		#{$prefix}summary[data-icon-closed="#{$name}"] {
+			--theme-icon-closed: url("#{variable.$path}#{$name}#{variable.$extension}");
+		}
+		#{$prefix}summary[data-icon-open="#{$name}"] {
+			--theme-icon-open: url("#{variable.$path}#{$name}#{variable.$extension}");
+		}
 		#{$prefix}[data-icon="#{$name}"] {
 			--theme-icon: url("#{variable.$path}#{$name}#{variable.$extension}");
 		}

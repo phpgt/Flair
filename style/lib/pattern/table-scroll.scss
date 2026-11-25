@@ -3,6 +3,7 @@
 %p-table-scroll {
 	min-inline-size: 0;
 	max-inline-size: 100%;
+	max-block-size: var(--theme-table-scroll-max-block-size, none);
 	overflow-x: auto;
 	overscroll-behavior-inline: contain;
 

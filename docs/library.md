@@ -1026,3 +1026,17 @@ accessibility, and example/reference ordering on all ten library pages:
 FLAIR_TEST_URL=http://localhost:8084 NODE_PATH=/tmp/flair-review/node_modules \
   node test/input-groups-browser-check.cjs
 ```
+
+### Filter forms
+
+Extend `%p-filter-fields` on a filter form whose direct children are wrapping
+labels (`<label><span>Caption</span><input ...></label>`) and an `.actions` group.
+Selects use the same structure. On small screens, a shared content-sized caption
+column keeps every control aligned without squeezing longer captions. From 40rem,
+labels sit above their controls with `--theme-field-gap` spacing; fields wrap into
+columns with a minimum measure of 10rem. `--theme-form-gap` controls the spacing
+between fields. Action groups span the form without reserving a caption line.
+
+Table scroll regions (`%p-table-scroll`) accept
+`--theme-table-scroll-max-block-size` to cap the scrolling area’s height. It
+defaults to `none`; filters and pagination can remain outside the scroll region.

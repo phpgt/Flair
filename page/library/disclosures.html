@@ -10,7 +10,12 @@
 		<h2 id="single-title">Expandable content</h2>
 		<p>
 			Details and summary provide keyboard and pointer interaction without
-			JavaScript. The native marker indicates the state.
+			JavaScript. The native marker indicates the state by default. To replace it
+			with icons inside the summary, add <code>data-icon-closed="plus"</code>
+			and <code>data-icon-open="minus"</code> to the summary, register those names
+			in <code>$icon-names</code>, and include <code>flair.icon</code>. Icons use
+			the same paths, sizing and colour as <code>data-icon</code>. If the open
+			icon is omitted, the closed icon remains visible in both states.
 		</p>
 		<div class="flair-example">
 			<details class="demo-disclosure">
